@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
 <br>
 <div align="center">
     <h2>{{message}}</h2>
@@ -8,7 +12,7 @@
     <table class="table table-striped" *ngIf="scheduledflight && scheduledflight.length > 0  else elseBlock">
         <thead>
         <tr>
-            <th>SCHEDULED FLIGHT NUMBER</th>
+            <th>SCHEDULED FLIGHT ID</th>
             <th>FLIGHT NUMBER</th>
             <th>SOURCE AIRPORT</th>
             <th>DESTINATION AIRPORT</th>
@@ -33,7 +37,7 @@
                 <td>{{e.ticketcost}}</td>
                 <td>{{e.availableSeats}}</td>
                 <td>
-                    <button type="button" class="btn btn-large btn-block btn-primary" (click)=delete(e)>Delete</button>
+                    <button type="button" class="btn btn-large btn-block btn-danger" (click)=delete(e)>Delete</button>
                 </td>
                 <td>
                     <button type="button" class="btn btn-large btn-block btn-primary" (click)=update(e)>Update</button>
@@ -46,3 +50,6 @@
         <h4 align="center"> There are no Scheduled flights to display,please add the Scheduled flights! </h4>
     </ng-template>
 </div>
+
+
+

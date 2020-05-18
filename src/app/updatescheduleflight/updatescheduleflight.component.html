@@ -1,10 +1,14 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
 <br>
-<div align="center">
-    <h2>{{message}}</h2>
-    </div>
+
 <div class="container">
     <button type="button" class="btn btn-primary" routerLink="/app-adminoperations">Home</button>
-   
+    <div align="center">
+        <h2>{{message}}</h2>
+        </div>
     <h3>UPDATE SCHEDULED FLIGHTS</h3>
 
 <form #scheduleForm="ngForm" (ngSubmit)='onUpdateScheduledflight(scheduleForm.value)'>
@@ -78,13 +82,34 @@
 
     </div>
 
+    <div class="form-group">
+
+        <label>ARRIVAL DATE: </label>
+
+        <input required  type="date"  #arrivaldate='ngModel' name="date1" ngModel
+            class="form-control">
+
+        <div *ngIf='arrivaldate.errors
+                    && arrivaldate.touched' class="alert alert-danger">
+
+            <div [hidden]='!arrivaldate.errors.required'>
+
+                Provide Arrival date
+
+            </div>
+
+            <div *ngIf='arrivaldate.errors.pattern'>Arrival Time should be minimum of 6 characters length</div>
+
+        </div>
+
+    </div>
 
 
     <div class="form-group">
 
         <label>ARRIVAL TIME: </label>
 
-        <input required minlength="4" type="datetime" #arrivalTime='ngModel' name="arrivaltime" ngModel
+        <input required minlength="4" type="time" #arrivalTime='ngModel' name="arrivaltime" ngModel
             class="form-control">
 
         <div *ngIf='arrivalTime.errors
@@ -107,7 +132,7 @@
 
         <label>DEPARTURE TIME: </label>
 
-        <input required minlength="4" type="datetime" #departureTime='ngModel' name="departuretime" ngModel
+        <input required minlength="4" type="time" #departureTime='ngModel' name="departuretime" ngModel
             class="form-control">
 
         <div *ngIf='departureTime.errors
@@ -173,3 +198,6 @@
 </form>
 
 </div>
+
+
+

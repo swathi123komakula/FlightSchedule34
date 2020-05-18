@@ -1,22 +1,30 @@
-
-<div align="right"> <input type="submit"  routerLink='/app-login' value="LogOut" class="btn btn-success">
-</div>
-  <div class="container">
-    
-            <h5 class="card-title text-center">Welcome Admin!!!</h5>
-           
-              <button class="btn btn-primary" routerLink='/app-scheduledflight' type="submit">Schedule A Flight</button>
-              &nbsp;&nbsp;
-              <button class="btn btn-primary" routerLink='/app-viewscheduleflight' type="submit">View Scheduled Flight</button>
-              &nbsp;&nbsp;
-              <button class="btn btn-primary" routerLink='/app-updatescheduleflight' type="submit">update Scheduled Flight</button>
-              &nbsp;&nbsp;
-              <button class="btn btn-primary" routerLink='/app-searchscheduledflight' type="submit">Search Scheduled Flight</button>
-              &nbsp;&nbsp;
-    </div>
-
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+  <div align="right"> <input type="submit"  routerLink='/app-login' value="LogOut" class="btn btn-success">
+  </div>
+    <div class="container">
+      
+              <h5 class="card-title text-center">Welcome Admin!!!</h5><br><br>
+              <button class="btn btn-primary" routerLink='/app-airport'>Add Airport</button>&nbsp;&nbsp;
+              
+                <button class="btn btn-primary" routerLink='/app-flight'>Add A Flight</button>
+                &nbsp;&nbsp;
+                <button class="btn btn-primary" routerLink='/app-viewflights' type="submit">View Flight</button>
+                &nbsp;&nbsp;
+                <button class="btn btn-primary" routerLink='/app-searchflight' type="submit">Search Flight</button>
+                &nbsp;&nbsp;
+                <button class="btn btn-primary" routerLink='/app-scheduledflight' type="submit">Schedule A Flight</button>
+                &nbsp;&nbsp;
+                <button class="btn btn-primary" routerLink='/app-viewscheduleflight' type="submit">View Scheduled Flight</button>
+                &nbsp;&nbsp;
+                <button class="btn btn-primary" routerLink='/app-searchscheduledflight' type="submit">Search Scheduled Flight</button>
+                &nbsp;&nbsp;
+      </div>
+ 
 <router-outlet></router-outlet>
 
-            
-            
-            
+              
+              
+              

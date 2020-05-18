@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { Scheduledflight, ScheduleserviceService } from '../scheduleservice.service';
 import { Router } from '@angular/router';

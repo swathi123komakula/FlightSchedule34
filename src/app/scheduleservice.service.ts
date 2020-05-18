@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Time } from '@angular/common';
@@ -13,13 +12,13 @@ export class ScheduleserviceService {
     console.log("ins service add");
     console.log(addschedule,flight,sourceairport,destinationairport);
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.ser.post("http://localhost:1158/admin/addScheduledFlight/"+flight+'/'+sourceairport+'/'+destinationairport, addschedule,  { headers, responseType: 'text'});
+    return this.ser.post("http://localhost:1478/admin/addScheduledFlight/"+flight+'/'+sourceairport+'/'+destinationairport, addschedule,  { headers, responseType: 'text'});
   }
 
   public getScheduledflight() {
     console.log("ins service get schedule");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.ser.get("http://localhost:1158/admin/getAllscheduledflights", {headers, responseType:'json'});
+    return this.ser.get("http://localhost:1478/admin/getAllscheduledflights", {headers, responseType:'json'});
   }
 
   public updateScheduledflight(updateschedule: Scheduledflight) {
@@ -31,17 +30,17 @@ export class ScheduleserviceService {
   public onUpdateScheduledflight(updateschedule: Scheduledflight,flight:number,sourceairport:string,destinationairport:string) {
     console.log("ins service update");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.ser.put("http://localhost:1158/admin/updatescheduledflight/"+flight+'/'+sourceairport+'/'+destinationairport, updateschedule,  { headers, responseType: 'text'});
+    return this.ser.put("http://localhost:1478/admin/updatescheduledflight/"+flight+'/'+sourceairport+'/'+destinationairport, updateschedule,  { headers, responseType: 'text'});
   }
   deleteScheduledflight(scheduledflightid: number) {
     console.log("ins service delete");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.ser.delete("http://localhost:1158/admin/deletescheduledflight/" + scheduledflightid,  { headers, responseType: 'text'});
+    return this.ser.delete("http://localhost:1478/admin/deletescheduledflight/" + scheduledflightid,  { headers, responseType: 'text'});
   }
   searchScheduledflight(scheduledflightid: number) {
     console.log("ins service search");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.ser.get("http://localhost:1158/admin/getScheduledFlight/" + scheduledflightid, { headers, responseType: 'json'});
+    return this.ser.get("http://localhost:1478/admin/getScheduledFlight/" + scheduledflightid, { headers, responseType: 'json'});
   }
 
 }
@@ -59,3 +58,4 @@ export class Scheduledflight
   ticketcost:number;
 
 }
+
